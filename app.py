@@ -7,7 +7,7 @@ import os
 app = Flask(__name__) # '__main__'
 app.secret_key = "0000"
 app.config.update(
-    DB_URI=os.environ.get('DB_URI'),
+    DB_URI=os.environ.get('MONGODB_URI'),
     ADMIN=os.environ.get('ADMIN'),
     DB_NAME='jobopenings',
 )
