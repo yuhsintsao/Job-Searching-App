@@ -15,7 +15,7 @@ app.config.update(
 )
 
 def insertStaticDataIntoDatabase():
-    client = pymongo.MongoClient(app.config['DB_URI'])
+    client = MongoClient(app.config['DB_URI'])
     company = client[app.config['DB_NAME']]['company']
     job = client[app.config['DB_NAME']]['job']
 
