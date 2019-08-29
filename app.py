@@ -9,14 +9,15 @@ app.secret_key = "0000"
 app.config.update(
     DB_URI=os.environ.get('MONGODB_URI'),
     ADMIN=os.environ.get('ADMIN'),
-    DB_NAME='user',
+    DB_NAME='jobopenings',
 )
 
 app.register_blueprint(menu_blueprint, url_prefix="/menu")
 
 @app.before_first_request   
 def initialize_database():
-    Database.initialize(app.config['DB_URI'], app.config['DB_NAME'])
+    #Database.initialize(app.config['DB_URI'], app.config['DB_NAME'])
+    pass
 
 @app.route('/', methods=['GET'])
 @app.route('/home', methods=['GET'])
