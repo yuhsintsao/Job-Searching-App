@@ -9,7 +9,7 @@ app.secret_key = "0000"
 app.config.update(
     DB_URI=os.environ.get('MONGODB_URI'),
     ADMIN=os.environ.get('ADMIN'),
-    DB_NAME='jobopenings',
+    DB_NAME='user',
 )
 
 app.register_blueprint(menu_blueprint, url_prefix="/menu")
