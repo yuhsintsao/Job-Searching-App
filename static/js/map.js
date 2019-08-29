@@ -2,7 +2,7 @@
 
 $(function () {
 
-    Plotly.d3.csv('http://localhost:5000/static/data/v100_NVDA.csv', function (err, rows) {
+    Plotly.d3.csv('https://an-app-for-job-seekers.herokuapp.com/static/data/v100_NVDA.csv', function (err, rows) {
 
         var continent = document.getElementById("geo-graph").getAttribute("continent");
         console.log(continent)
