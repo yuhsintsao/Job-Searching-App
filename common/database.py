@@ -9,7 +9,7 @@ class Database(object):
     @staticmethod
     def initialize(URI, collection):
         client = pymongo.MongoClient(URI)
-        Database.DATABASE = client[collection] 
+        Database.DATABASE = client.get_default_database() 
     
     # Add one data
     @staticmethod
