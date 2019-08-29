@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="map-section" class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Job Openings</h1>
+        <p class="lead">Find more jobs on your geolocation!</p>
+        <form id="search-form" action="/menu/map" method="post">
+            <select class="custom-select map-select" id="company" name="company">
+                <option selected>Nvidia</option>
+                <option value="AMZN">Amazon</option>
+                <option value="GOOG">Google</option>
+            </select>
+            <select class="custom-select map-select" id="continent" name="continent">
+                <option selected value="usa">USA</option>
+                <option value="asia">Asia</option>
+                <option value="europe">Europe</option>
+                <option value="africa">Africa</option>
+            </select>
+            <button type="submit" class="btn btn-dark btn-sm">Update</button>
+        </form>
+    </div>
+</div>
+<div class="container geo-map-dashboard">
+    {% if continent %}
+    <p id="geo-graph" continent={{ continent }}></p>
+    {% else %}
+    <p id="geo-graph"></p>
+    {% endif %}
+</div>
+<div id="title-section" class="jumbotron">
+    <h1 class="display-4">Find Job Title</h1>
+    <p class="lead">Search the title which matches your interest best!</p>
+    <hr class="my-4">
+    <p class="lead">
+        <form id="search-form" action="/menu/map" method="post">
+            <div class="form-group form-map">
+                <label>From</label>
+                <input type="text" class="form-control" id="start" name="start"
+                    placeholder="Enter start date, e.g. 2017-07-01">
+            </div>
+            <div class="form-group form-map">
+                <label>To</label>
+                <input type="text" class="form-control" id="end" name="end"
+                    placeholder="Enter end date, e.g. 2018-07-31">
+            </div>
+            <div class="form-group form-map">
+                <label>Titile</label>
+                <input type="text" class="form-control" id="title" name="title"
+                    placeholder="Enter title, e.g. Software Engineer">
+            </div>
+            <button type="submit" class="btn btn-light">Search</button>
+        </form>
+    </p>
+</div>
+<div class="container">
+    <p id="title-list"></p>
+    {% if results is defined %}
+        {% for key, value in results.iterrows() %}
+        <li class="list-group-item mt-0"> {{ value.title }} <small class="float-right">{{ value.update_date }}</small> </li>
+        {% endfor %}
+    {% endif %}
+</div>
+<script src="../static/js/map.js"></script>
+
+{% endblock %}

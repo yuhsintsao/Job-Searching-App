@@ -1,0 +1,52 @@
+body {
+    position: relative;
+}
+
+.login-page-form {
+    margin-top: 20px;
+    max-width: 400px;
+}
+
+.register-page-form {
+    margin-top: 20px;
+    max-width: 400px;
+}
+
+.search-form { 
+    margin-top: 20px;
+    max-width: 400px;   
+}
+
+.map {
+    margin-top: 100px;  
+}
+
+.jumbotron {
+    font-family: 'Comfortaa', cursive;
+}
+
+div.jumbotron h1 {
+    font-size: 40px;
+}
+
+div.jumbotron p {
+    font-size: 24px;
+}
+
+.geo-map-dashboard {
+    font-family: 'Comfortaa', cursive;
+    margin-top: 10px;
+}
+
+.map-select {
+    font-size: 14px;
+    max-width: 40%;
+}
+
+.form-map {
+    font-size: 14px;
+    max-width: 40%;    
+}
+
+
+
