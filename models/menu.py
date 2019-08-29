@@ -30,7 +30,7 @@ class Menu(object):
         searchJob = cls.search_job(from_date, to_date, title)
         searchCompany = cls.search_company(location, region, country)
         if not searchJob.empty:
-            search_result = searchJob.merge(searchCompany, how="left", on='id')
+            search_result = searchJob.merge(searchCompany, how="left", on='locality')
             return search_result
         else:
             return pd.DataFrame()
