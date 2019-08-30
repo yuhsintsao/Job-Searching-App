@@ -30,7 +30,7 @@ app.register_blueprint(menu_blueprint, url_prefix="/menu")
 
 @app.before_first_request   
 def initialize_database():
-    insertStaticDataIntoDatabase()
+    #insertStaticDataIntoDatabase()
     Database.initialize(app.config['DB_URI'], app.config['DB_NAME'])
 
 @app.route('/', methods=['GET'])
